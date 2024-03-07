@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "take-home-project"
+version = "0.1.0"
+description = ""
+authors = ["Gherucu <alexandrugheara@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+docker = "^7.0.0"
+argparse = "^1.4.0"
+requests = "^2.31.0"
+openai = "^1.13.3"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+pytest-mock = "^3.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

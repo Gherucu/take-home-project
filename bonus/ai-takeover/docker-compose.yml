@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  target:
+    build:
+      context: .
+      dockerfile: Dockerfile.target
+    hostname: target
+    ports:
+      - "2222:22"
+
+  attacker:
+    build:
+      context: .
+      dockerfile: Dockerfile.attacker
+    hostname: attacker
+    env_file:
+      - .env
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - target

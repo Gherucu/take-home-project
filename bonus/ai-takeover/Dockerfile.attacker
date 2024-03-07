@@ -1,0 +1,18 @@
+# Dockerfile.attacker
+FROM python:3.9-alpine
+
+# Install SSH client and sshpass
+RUN apk update && \
+    apk add --no-cache openssh-client sshpass
+
+# Install Python packages
+RUN pip install --no-cache-dir requests openai python-dotenv
+
+# Copy the Python attack script
+COPY attack_script.py /attack_script.py
+
+# Ensure the script is executable
+RUN chmod +x /attack_script.py
+
+# Execute the attack script
+CMD ["python", "/attack_script.py"]

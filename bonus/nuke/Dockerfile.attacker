@@ -1,0 +1,13 @@
+# Dockerfile.attacker
+FROM alpine:latest
+
+# Install SSH client and sshpass
+RUN apk update && \
+    apk add --no-cache openssh-client sshpass
+
+# Copy the attack script
+COPY attack.sh /attack.sh
+RUN chmod +x /attack.sh
+
+# Execute the attack
+CMD ["/attack.sh"]

@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  target:
+    build:
+      context: .
+      dockerfile: Dockerfile.target
+    hostname: target
+    ports:
+      - "2222:22"
+
+  attacker:
+    build:
+      context: .
+      dockerfile: Dockerfile.attacker
+    depends_on:
+      - target
