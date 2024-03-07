@@ -76,6 +76,19 @@ To run the application, use the following commands as per your requirements:
   make clean
   ```
 
+- **Nuke**:
+  Runs the Nuke Code retrieval task:
+  ```bash
+  make nuke
+  ```
+
+- **Ai TakeOver**:
+  Runs the Ai TakeOver Code retrieval task.:
+  ```bash
+  make ai-takeover
+  ```
+  Note: please create a .env file in the /bonus/ai-takeover directory  with your Openai Api Key as a variable called OPENAI_API_KEY
+
 ## Development
 
 The project is structured as follows:
